@@ -38,7 +38,8 @@ class Employee:  # Class-name
         """ This is a "STATIC" method. A static method does not take a default argument
         unlike the regular and class methods which takes self(instance) and cls(class)
         arguments by default respectively. It is mainly used when we are not directly working
-        with our instance and classes but a bit related. """
+        with our instance and classes but a bit related. static methods do not operate directly
+        on the instance or class """
         if day.weekday() == 5 or day.weekday() == 6:
             """ The weekday() method comes from the inbuilt datetime module. """
             return False
