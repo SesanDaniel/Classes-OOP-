@@ -33,11 +33,26 @@ class Employee:  # Class-name
         defined is a class method. """
         cls.salary_raise = amount
 
+    @staticmethod
+    def workday(day):
+        """ This is a "STATIC" method. A static method does not take a default argument
+        unlike the regular and class methods which takes self(instance) and cls(class)
+        arguments by default respectively. It is mainly used when we are not directly working
+        with our instance and classes but a bit related. """
+        if day.weekday() == 5 or day.weekday() == 6:
+            """ The weekday() method comes from the inbuilt datetime module. """
+            return False
+        return True
+
 
 employee_1 = Employee("Daniel", 3550)  # First instance (Object) of class Employee
 employee_2 = Employee("Bella", 7540)  # Second instance (Object) of class Employee
 """ Notice how both instances of Employee class takes 2 arguments. This is because 
 we passed the arguments during initialization in the __init__ method """
+
+import datetime
+
+my_date = datetime.date(2023, 2, 5)
 
 print(employee_1.name)
 print(employee_2.name)
@@ -51,3 +66,4 @@ print(Employee.greetings_to_employee(employee_1))
 print(Employee.greetings_to_employee(employee_2))
 print(Employee.num_of_employees)
 print(Employee.salary_raise)
+print(Employee.workday(my_date))
