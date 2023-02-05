@@ -22,8 +22,10 @@ class Employee:  # Class-name
         return self.salary / self.tax
 
 
-employee_1 = Employee("Daniel", 3550)
-employee_2 = Employee("Bella", 7540)
+employee_1 = Employee("Daniel", 3550)  # First instance (Object) of class Employee
+employee_2 = Employee("Bella", 7540)    # Second instance (Object) of class Employee
+""" Notice how both instances of Employee class takes 2 arguments. This is because 
+we passed the arguments during initialization in the __init__ method """
 
 print(employee_1.name)
 print(employee_2.name)
