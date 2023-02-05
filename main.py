@@ -1,7 +1,11 @@
-class Employee:
-    tax = 1.05
+class Employee:  # Classname
+    tax = 1.05 # A class attribute
 
     def __init__(self, name, salary):
+        """ This is the init method, which runs the instance of a class
+         everytime the class is instantiated. The __init__ takes "self"
+         as first argument followed by any other argument we intend to
+         use in class. The self argument refers to each instance of the class. """
         self.name = name
         self.salary = salary
 
