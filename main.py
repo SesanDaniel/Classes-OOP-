@@ -1,13 +1,15 @@
-class Employee:  # Classname
-    tax = 1.05 # A class attribute
+class Employee:  # Class-name
+    tax = 1.05  # A class attribute
+    num_of_employees = 0
 
     def __init__(self, name, salary):
         """ This is the init method, which runs the instance of a class
          everytime the class is instantiated. The __init__ takes "self"
          as first argument followed by any other argument we intend to
          use in class. The self argument refers to each instance of the class. """
-        self.name = name
-        self.salary = salary
+        self.name = name  # Instance Variable
+        self.salary = salary  # Instance Variable
+        Employee.num_of_employees += 1
 
     def greetings_to_employee(self):
         """ This is a method (A method is a function in a class) """
@@ -33,3 +35,4 @@ print(employee_1.greetings_to_employee())
 print(employee_2.greetings_to_employee())
 print(Employee.greetings_to_employee(employee_1))
 print(Employee.greetings_to_employee(employee_2))
+print(Employee.num_of_employees)
