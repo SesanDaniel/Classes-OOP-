@@ -1,6 +1,7 @@
 class Employee:  # Class-name
     tax = 1.05  # A class attribute
     num_of_employees = 0
+    salary_raise = 1.10
 
     def __init__(self, name, salary):
         """ This is the init method, which runs the instance of a class
@@ -20,12 +21,21 @@ class Employee:  # Class-name
     def emp_salary(self):  # This is also a "REGULAR" method
         return int(self.salary)
 
-    def salary_after_monthly_tax(self):
+    def salary_after_monthly_tax(self):  # This is another "REGULAR" method
         return self.salary / self.tax
+
+    @classmethod
+    def raise_amnt(cls, amount):
+        """ This is a "CLASS" method. A class method takes in the class as
+        it's first argument using the conventional keyword "cls". As seen in
+        the declaration, there is a decorator (@classmethod) at the top of the function
+        declaration. This decorator tells the machine and humans that the method to be
+        defined is a class method. """
+        cls.salary_raise = amount
 
 
 employee_1 = Employee("Daniel", 3550)  # First instance (Object) of class Employee
-employee_2 = Employee("Bella", 7540)    # Second instance (Object) of class Employee
+employee_2 = Employee("Bella", 7540)  # Second instance (Object) of class Employee
 """ Notice how both instances of Employee class takes 2 arguments. This is because 
 we passed the arguments during initialization in the __init__ method """
 
@@ -40,3 +50,4 @@ print(employee_2.greetings_to_employee())
 print(Employee.greetings_to_employee(employee_1))
 print(Employee.greetings_to_employee(employee_2))
 print(Employee.num_of_employees)
+print(Employee.salary_raise)
