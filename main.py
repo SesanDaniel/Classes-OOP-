@@ -46,10 +46,29 @@ class Employee:  # Class-name
         return True
 
 
+class Gender(Employee):
+    """ This is a subclass to the Employee class. It takes the superclass(Employee) as it's only
+    argument. All attributes of the superclass can be inherited once called in the subclass. In
+    some cases, we always want to add attributes in the subclass. We can update the __init__
+    method in the subclass with the new attribute without having to rewrite the previous attributes
+    from the subclass. """
+
+    def __init__(self, name, salary, gender):
+        super().__init__(name, salary)
+        """ The super() method, is used to update the __init__ of our subclass from the super class
+        without having to rewrite our attributes from the superclass. This helps in keeping ones code
+        DRY. """
+        # Employee.__init__(self, name, salary)  # Another approach to using the super() method
+        self.gender = gender
+
+
 employee_1 = Employee("Daniel", 3550)  # First instance (Object) of class Employee
 employee_2 = Employee("Bella", 7540)  # Second instance (Object) of class Employee
 """ Notice how both instances of Employee class takes 2 arguments. This is because 
 we passed the arguments during initialization in the __init__ method """
+
+gender_1 = Gender("Daniel", 4550, "Male")
+gender_2 = Gender("Bella", 8730, "Female")
 
 import datetime
 
@@ -68,3 +87,10 @@ print(Employee.greetings_to_employee(employee_2))
 print(Employee.num_of_employees)
 print(Employee.salary_raise)
 print(Employee.workday(my_date))
+
+print(gender_1.name)
+print(gender_2.name)
+print(gender_1.salary)
+print(gender_2.salary)
+print(gender_1.gender)
+print(gender_2.gender)
