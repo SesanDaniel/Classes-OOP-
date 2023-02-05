@@ -12,10 +12,12 @@ class Employee:  # Class-name
         Employee.num_of_employees += 1
 
     def greetings_to_employee(self):
-        """ This is a method (A method is a function in a class) """
+        """ This is a "REGULAR" method (A method is a function in a class).
+         A REGULAR method takes in the instance as it's first argument, using
+         "self" by convention """
         return f"Hi {self.name}, welcome to work!!!"
 
-    def emp_salary(self):
+    def emp_salary(self):  # This is also a "REGULAR" method
         return int(self.salary)
 
     def salary_after_monthly_tax(self):
